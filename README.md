@@ -30,6 +30,6 @@ flutter run
 
 ## Fechando o app
 
-Com o terminal aberto aperte:
+Com o terminal aberto pressione:
 
 d
