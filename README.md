@@ -2,31 +2,42 @@ Projeto Radar Urbano
 
 ## Inicio
 
-This project is a starting point for a Flutter application.
+Este é um projeto feito por alunos do Uniftec cursando a disciplina Projeto Integrador Institucional: Desenvolvimento Profissional, Grupo G
 
-A few resources to get you started if this is your first Flutter project:
+O projeto consiste no desenvolvimento de uma plataforma digital voltada ao
+registro de problemas urbanos, permitindo que cidadãos comuniquem situações do
+dia a dia que impactam a cidade. A proposta busca utilizar a tecnologia como meio
+de aproximar a população dos órgãos responsáveis, criando um canal simples,
+acessível e eficiente para o compartilhamento de informações e melhoria dos
+serviços urbanos.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Equipe:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Carlos Dorizete Martins
+Gabriel Callegari Lazzari
+Gabriel Vargas Oliveira
+Gabriele Weber
+Jean Carlos de Oliveira
+Lucas Felipe Gunther
+Thaisa Fabrísio Celli
 
-## 🛠️ Dependencias do projeto para Depuração (Debugging)
+## 🛠️ Dependencias do projeto para Debugging
 
-Navegador Google Chrome ou Microsoft Edge instalado (usados pelo Flutter para injetar as ferramentas de desenvolvimento web).
+- **Geral (Obrigatório):**
+  - **Flutter SDK** (incluindo o Dart SDK integrado).
 
-Visual Studio 2022 com o pacote "Desenvolvimento para desktop com C++" instalada. Que inclui o compilador MSVC e o CMake necessários para debugar em ambiente desktop
+- **Para ambiente Web (Browser):**
+  - Navegador **Google Chrome** ou **Microsoft Edge** instalado.
 
-Flutter SDK
+- **Para ambiente Mobile (Android):**
+  - **Android SDK Platform-Tools**
 
-Android SDK Platform-Tools
+- **Para ambiente Desktop (Windows):**
+  - **Visual Studio 2022** com **"Desenvolvimento para desktop com C++"** instalado, inclui o compilador MSVC e o CMake.
 
 ## Iniciando o app
 
-Depois de fazer o download, extraia os arquivos, abra um terminal na pasta ROOT do projeto e digite:
+Faça o download, extraia os arquivos e abra um terminal na pasta ROOT do projeto:
 
 flutter pub get
 
