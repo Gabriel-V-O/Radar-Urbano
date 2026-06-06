@@ -11,7 +11,7 @@ de aproximar a população dos órgãos responsáveis, criando um canal simples,
 acessível e eficiente para o compartilhamento de informações e melhoria dos
 serviços urbanos.
 
-Equipe:
+## Equipe:
 
 Carlos Dorizete Martins
 Gabriel Callegari Lazzari
@@ -24,20 +24,18 @@ Thaisa Fabrísio Celli
 ## 🛠️ Dependencias do projeto para Debugging
 
 - **Geral (Obrigatório):**
-  - **Flutter SDK** (incluindo o Dart SDK integrado).
+  - **[Flutter SDK]**(https://docs.flutter.dev/install) (incluindo o Dart SDK integrado).
 
 - **Para ambiente Web (Browser):**
   - Navegador **Google Chrome** ou **Microsoft Edge** instalado.
 
 - **Para ambiente Mobile (Android):**
-  - **Android SDK Platform-Tools**
+  - **[Android SDK Platform-Tools]**(https://developer.android.com/tools/releases/platform-tools)
 
 - **Para ambiente Desktop (Windows):**
-  - **Visual Studio 2022** com **"Desenvolvimento para desktop com C++"** instalado, inclui o compilador MSVC e o CMake.
+  - **[Visual Studio 2022]**(https://visualstudio.microsoft.com/pt-br/vs/) com **"Desenvolvimento para desktop com C++"** instalado, inclui o compilador MSVC e o CMake.
 
 ## Iniciando o app
-
-Faça o download, extraia os arquivos e abra um terminal na pasta ROOT do projeto:
 
 flutter pub get
 
