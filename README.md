@@ -51,7 +51,7 @@ flutter create .
 flutter run
 ```
 
-## Fechando o app
+## 🚫 Fechando o app
 
 ```bash
 q
