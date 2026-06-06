@@ -27,7 +27,7 @@ serviços urbanos.
   - **[Flutter SDK](https://docs.flutter.dev/install)** (incluindo o Dart SDK integrado).
 
 - **Para ambiente Web (Browser):**
-  - Navegador **[Google Chrome](https://www.google.com/intl/pt-BR/chrome/)** ou **[Microsoft Edge]** instalado.
+  - Navegador **[Google Chrome](https://www.google.com/intl/pt-BR/chrome/)** ou **Microsoft Edge** instalado.
 
 - **Para ambiente Mobile (Android):**
   - **[Android SDK Platform-Tools](https://developer.android.com/tools/releases/platform-tools)**
