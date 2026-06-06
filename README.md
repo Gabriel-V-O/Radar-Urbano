@@ -37,14 +37,22 @@ serviços urbanos.
 
 ## Iniciando o app
 
+Com um terminal aberto na pasta ROOT do projeto:
+
+```bash
 flutter pub get
+```
 
+```bash
 flutter create .
+```
 
+```bash
 flutter run
+```
 
 ## Fechando o app
 
-Com o terminal aberto pressione:
-
+```bash
 d
+```
