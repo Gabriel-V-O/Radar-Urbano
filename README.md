@@ -54,5 +54,5 @@ flutter run
 ## Fechando o app
 
 ```bash
-d
+q
 ```
