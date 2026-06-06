@@ -13,13 +13,13 @@ serviços urbanos.
 
 ## Equipe:
 
-Carlos Dorizete Martins
-Gabriel Callegari Lazzari
-Gabriel Vargas Oliveira
-Gabriele Weber
-Jean Carlos de Oliveira
-Lucas Felipe Gunther
-Thaisa Fabrísio Celli
+- Carlos Dorizete Martins
+- Gabriel Callegari Lazzari
+- Gabriel Vargas Oliveira
+- Gabriele Weber
+- Jean Carlos de Oliveira
+- Lucas Felipe Gunther
+- Thaisa Fabrísio Celli
 
 ## 🛠️ Dependencias do projeto para Debugging
 
