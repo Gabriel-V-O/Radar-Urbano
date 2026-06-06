@@ -35,7 +35,7 @@ serviços urbanos.
 - **Para ambiente Desktop (Windows):**
   - **[Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/)** com **"Desenvolvimento para desktop com C++"** instalado, inclui o compilador MSVC e o CMake.
 
-## Configurando e Iniciando o projeto
+## 🚀 Configurando e Iniciando o projeto
 
 Com um terminal aberto na pasta ROOT do projeto:
 
