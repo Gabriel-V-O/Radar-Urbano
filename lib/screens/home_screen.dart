@@ -54,8 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (typedAddress.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(
-              'Por favor, informe a localização do problema antes de reportar.'),
+          content: Text('Por favor, informe a localização do problema antes de reportar.'),
           backgroundColor: Colors.redAccent,
           duration: Duration(seconds: 3),
         ),
@@ -63,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
 
-    final String displayCategory = '$_selectedCategory em $typedAddress';
+    final String displayCategory = '$_selectedCategory em $typedAddress'; 
 
     setState(() {
       _protocols.insert(0, {
@@ -127,8 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           const SizedBox(height: 24),
-
-          // ALTERAÇÃO AQUI: Adicionado o texto (opcional) estilizado com uma cor mais suave
           RichText(
             text: const TextSpan(
               text: 'Evidência Visual ',
@@ -150,7 +147,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-
           const SizedBox(height: 12),
           Container(
             width: double.infinity,
@@ -220,8 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintStyle: TextStyle(color: Color(0xFF78909C), fontSize: 14),
                 prefixIcon: Icon(Icons.search, color: Color(0xFF78909C)),
                 border: InputBorder.none,
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
               ),
             ),
           ),
@@ -291,7 +286,21 @@ class _HomeScreenState extends State<HomeScreen> {
     final List<Widget> screens = [
       _buildReportForm(),
       const MapScreen(),
-      ProtocolsScreen(protocols: _protocols),
+      ProtocolsScreen(
+        protocols: _protocols,
+        onDelete: (index) {
+          setState(() {
+            _protocols.removeAt(index);
+          });
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Protocolo excluído com sucesso.'),
+              backgroundColor: Colors.black87,
+              duration: Duration(seconds: 2),
+            ),
+          );
+        },
+      ),
     ];
 
     final List<String> titles = [
@@ -373,21 +382,14 @@ class MapMockPainter extends CustomPainter {
       ..color = const Color(0xFFFFF9C4)
       ..style = PaintingStyle.fill;
 
-    canvas.drawLine(Offset(0, size.height / 2),
-        Offset(size.width, size.height / 2), paintLine);
-    canvas.drawLine(Offset(size.width * 0.25, 0),
-        Offset(size.width * 0.25, size.height), paintLine);
-    canvas.drawLine(Offset(size.width * 0.5, 0),
-        Offset(size.width * 0.5, size.height), paintLine);
-    canvas.drawLine(Offset(size.width * 0.75, 0),
-        Offset(size.width * 0.75, size.height), paintLine);
+    canvas.drawLine(Offset(0, size.height / 2), Offset(size.width, size.height / 2), paintLine);
+    canvas.drawLine(Offset(size.width * 0.25, 0), Offset(size.width * 0.25, size.height), paintLine);
+    canvas.drawLine(Offset(size.width * 0.5, 0), Offset(size.width * 0.5, size.height), paintLine);
+    canvas.drawLine(Offset(size.width * 0.75, 0), Offset(size.width * 0.75, size.height), paintLine);
 
-    canvas.drawCircle(
-        Offset(size.width * 0.25, size.height / 2), 6, paintCircle);
-    canvas.drawCircle(
-        Offset(size.width * 0.5, size.height / 2), 6, paintCircle);
-    canvas.drawCircle(
-        Offset(size.width * 0.75, size.height / 2), 6, paintCircle);
+    canvas.drawCircle(Offset(size.width * 0.25, size.height / 2), 6, paintCircle);
+    canvas.drawCircle(Offset(size.width * 0.5, size.height / 2), 6, paintCircle);
+    canvas.drawCircle(Offset(size.width * 0.75, size.height / 2), 6, paintCircle);
   }
 
   @override
