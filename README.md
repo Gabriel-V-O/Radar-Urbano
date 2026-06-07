@@ -42,10 +42,6 @@ flutter pub get
 ```
 
 ```bash
-flutter create .
-```
-
-```bash
 flutter run
 ```
 
