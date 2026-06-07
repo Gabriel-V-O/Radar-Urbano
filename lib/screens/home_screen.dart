@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import '../widgets/category_card.dart';
 import 'map_screen.dart';
@@ -120,6 +122,30 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Color(0xFF212121),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.04),
+                  blurRadius: 4,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: const TextField(
+              decoration: InputDecoration(
+                hintText: 'Digite o endereço ou nome do local...',
+                hintStyle: TextStyle(color: Color(0xFF78909C), fontSize: 14),
+                prefixIcon: Icon(Icons.search, color: Color(0xFF78909C)),
+                border: InputBorder.none,
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+              ),
             ),
           ),
           const SizedBox(height: 12),
