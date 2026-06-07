@@ -1,8 +1,8 @@
-Projeto Radar Urbano
+Protótipo do Projeto Radar Urbano
 
 ## Inicio
 
-Este é um projeto feito por alunos do Uniftec cursando a disciplina Projeto Integrador Institucional: Desenvolvimento Profissional, Grupo G
+Este é um protótipo do projeto feito por alunos do Uniftec cursando a disciplina Projeto Integrador Institucional: Desenvolvimento Profissional, Grupo G
 
 O projeto consiste no desenvolvimento de uma plataforma digital voltada ao
 registro de problemas urbanos, permitindo que cidadãos comuniquem situações do
