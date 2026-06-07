@@ -37,8 +37,6 @@ serviços urbanos.
 
 ## 🚀 Configurando e Iniciando o projeto
 
-Com um terminal aberto na pasta ROOT do projeto:
-
 ```bash
 flutter pub get
 ```

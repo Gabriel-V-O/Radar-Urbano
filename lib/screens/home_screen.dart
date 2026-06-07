@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import '../widgets/category_card.dart';
 import 'map_screen.dart';
@@ -15,6 +13,31 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String _selectedCategory = 'Buraco';
   int _currentBottomNavIndex = 0;
+  final TextEditingController _addressController = TextEditingController();
+
+  final List<Map<String, String>> _protocols = [
+    {
+      'id': '#2026-0041',
+      'category': 'Buraco na Via',
+      'date': '05/06/2026',
+      'status': 'Em Análise',
+      'color': '0xFFFF9100'
+    },
+    {
+      'id': '#2026-0018',
+      'category': 'Lâmpada Queimada',
+      'date': '28/05/2026',
+      'status': 'Resolvido',
+      'color': '0xFF00C853'
+    },
+    {
+      'id': '#2026-0005',
+      'category': 'Vazamento de Água',
+      'date': '15/05/2026',
+      'status': 'Encaminhado',
+      'color': '0xFF2979FF'
+    },
+  ];
 
   final List<Map<String, dynamic>> _categories = [
     {'title': 'Buraco', 'icon': Icons.circle, 'color': Colors.deepPurple[900]},
@@ -24,6 +47,43 @@ class _HomeScreenState extends State<HomeScreen> {
     {'title': 'Vazamento', 'icon': Icons.opacity, 'color': Colors.blue},
     {'title': 'Outros', 'icon': Icons.add, 'color': Colors.purple},
   ];
+
+  void _handleSubmitReport() {
+    final String typedAddress = _addressController.text.trim();
+
+    if (typedAddress.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+              'Por favor, informe a localização do problema antes de reportar.'),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 3),
+        ),
+      );
+      return;
+    }
+
+    final String displayCategory = '$_selectedCategory em $typedAddress';
+
+    setState(() {
+      _protocols.insert(0, {
+        'id': '#2026-00${_protocols.length + 1}',
+        'category': displayCategory,
+        'date': '06/06/2026',
+        'status': 'Em Análise',
+        'color': '0xFFFF9100'
+      });
+      _addressController.clear();
+      _currentBottomNavIndex = 2;
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Problema reportado com sucesso!'),
+        backgroundColor: Color(0xFF00C853),
+      ),
+    );
+  }
 
   Widget _buildReportForm() {
     return SingleChildScrollView(
@@ -67,14 +127,30 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           const SizedBox(height: 24),
-          const Text(
-            'Evidência Visual',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF212121),
+
+          // ALTERAÇÃO AQUI: Adicionado o texto (opcional) estilizado com uma cor mais suave
+          RichText(
+            text: const TextSpan(
+              text: 'Evidência Visual ',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF212121),
+                fontFamily: 'Segoe UI',
+              ),
+              children: [
+                TextSpan(
+                  text: '(opcional)',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    color: Color(0xFF78909C),
+                  ),
+                ),
+              ],
             ),
           ),
+
           const SizedBox(height: 12),
           Container(
             width: double.infinity,
@@ -95,9 +171,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Icon(
                     Icons.camera_alt,
                     color: Color(0xFF78909C),
@@ -137,8 +213,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            child: const TextField(
-              decoration: InputDecoration(
+            child: TextField(
+              controller: _addressController,
+              decoration: const InputDecoration(
                 hintText: 'Digite o endereço ou nome do local...',
                 hintStyle: TextStyle(color: Color(0xFF78909C), fontSize: 14),
                 prefixIcon: Icon(Icons.search, color: Color(0xFF78909C)),
@@ -178,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             height: 50,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: _handleSubmitReport,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFE65100),
                 shape: RoundedRectangleBorder(
@@ -204,11 +281,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    _addressController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final List<Widget> screens = [
       _buildReportForm(),
       const MapScreen(),
-      const ProtocolsScreen(),
+      ProtocolsScreen(protocols: _protocols),
     ];
 
     final List<String> titles = [
