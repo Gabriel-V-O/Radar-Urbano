@@ -26,7 +26,7 @@ serviços urbanos.
 - **Geral (Obrigatório):**
   - **[Flutter SDK](https://docs.flutter.dev/install)** (incluindo o Dart SDK integrado).
 
-- **Para ambiente Web (Browser):**
+- **Para ambiente Web (Navegador):**
   - Navegador **[Google Chrome](https://www.google.com/intl/pt-BR/chrome/)** ou **Microsoft Edge** instalado.
 
 - **Para ambiente Mobile (Android):**
@@ -50,3 +50,8 @@ flutter run
 ```bash
 q
 ```
+
+## 📱 Demonstração Técnica do projeto
+
+- **Android**:
+  - **[Radar Urbano APK v1.0.0](https://github.com/Gabriel-V-O/Radar-Urbano/releases/download/v1.0.0/radar.urbabo.app-release.apk)**
